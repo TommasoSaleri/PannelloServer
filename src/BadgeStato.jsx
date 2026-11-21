@@ -5,3 +5,5 @@ function BadgeStato({stato}) {
         </span>
     )
 }
+
+export default BadgeStato
