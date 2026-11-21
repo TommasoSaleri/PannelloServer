@@ -167,54 +167,6 @@ Il progetto mette a disposizione i seguenti comandi:
 
 ---
 
-## Sviluppo
-
-Per contribuire allo sviluppo del progetto:
-
-1. **Clona** il repository
-2. Crea un nuovo branch
-3. Implementa le modifiche
-4. Verifica il codice con `npm run lint`
-5. Verifica la build con `npm run build`
-6. Effettua il commit delle modifiche
-7. Apri una **Pull Request**
-
-Esempio:
-
-```bash
-git checkout -b feature/nuova-funzionalita
-
-npm install
-npm run dev
-
-# dopo aver completato le modifiche
-npm run lint
-npm run build
-
-git add .
-git commit -m "feat: aggiunge nuova funzionalità"
-git push origin feature/nuova-funzionalita
-```
-
----
-
-## Convenzione per i commit
-
-Si consiglia di utilizzare messaggi di commit chiari e coerenti.
-
-Esempi:
-
-```text
-feat: aggiunge nuova funzionalità
-fix: corregge errore nel pannello
-refactor: riorganizza i componenti
-style: aggiorna lo stile dell'interfaccia
-docs: aggiorna la documentazione
-chore: aggiorna le dipendenze
-```
-
----
-
 ## Stato del progetto
 
 > **In sviluppo**
@@ -222,23 +174,6 @@ chore: aggiorna le dipendenze
 Il progetto è attualmente in fase di sviluppo e la struttura dell'applicazione può evolvere nel tempo.
 
 Funzionalità, componenti e configurazioni possono quindi essere aggiunti o modificati nelle versioni successive.
-
----
-
-## Roadmap
-
-Le possibili evoluzioni del progetto includono:
-
-- [ ] Sviluppo completo dell'interfaccia del pannello
-- [ ] Introduzione di componenti riutilizzabili
-- [ ] Implementazione delle funzionalità di gestione
-- [ ] Miglioramento della responsività
-- [ ] Gestione di autenticazione e autorizzazione
-- [ ] Collegamento a servizi/API backend
-- [ ] Gestione centralizzata dello stato
-- [ ] Miglioramento dell'accessibilità
-- [ ] Test automatici
-- [ ] Pipeline CI/CD
 
 ---
 
