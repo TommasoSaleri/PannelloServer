@@ -6,6 +6,7 @@ import Riepilogo from './Riepilogo.jsx'
 import SchedaServer from './SchedaServer.jsx'
 import GrigliaServer from './GrigliaServer.jsx'
 import ServerInEvidenza from './ServerInEvidenza.jsx'
+import Avvisi from './Avvisi.jsx'
 
 export default function App() {
   const ok = contaPerStato(servers, "ok")
@@ -35,6 +36,7 @@ export default function App() {
       />
       <GrigliaServer servers={servers} />
       <ServerInEvidenza cercato={cercato} server={servers.find(s => s.nome === cercato)} />
+      <Avvisi elenco={avvisi} />
     </div>
   )
 }
