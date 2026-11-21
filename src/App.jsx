@@ -5,6 +5,7 @@ import Intestazione from './Intestazione.jsx'
 import Riepilogo from './Riepilogo.jsx'
 import SchedaServer from './SchedaServer.jsx'
 import GrigliaServer from './GrigliaServer.jsx'
+import ServerInEvidenza from './ServerInEvidenza.jsx'
 
 export default function App() {
   const ok = contaPerStato(servers, "ok")
@@ -14,6 +15,7 @@ export default function App() {
   const serverOnline = ok + attenzione + critici
   const mediaCpu = cpuMedia(servers)
   const lento = piuLento(servers)
+  const cercato = "db-01"
 
   return (
     <div className="pannello">
@@ -32,6 +34,7 @@ export default function App() {
         lento={lento}
       />
       <GrigliaServer servers={servers} />
+      <ServerInEvidenza cercato={cercato} server={servers.find(s => s.nome === cercato)} />
     </div>
   )
 }
