@@ -1,17 +1,34 @@
 import './App.css'
 import { sistema, servers, avvisi } from './dati.js'
-import { SOGLIE, statoServer, contaPerStato } from './calcoli.js'
+import { contaPerStato, cpuMedia, piuLento } from './calcoli.js'
+import Intestazione from './Intestazione.jsx'
+import Riepilogo from './Riepilogo.jsx'
 
 export default function App() {
-  console.log(servers.length, avvisi.length)
-  console.log(statoServer(servers[0]), statoServer(servers[1]), statoServer(servers[2]))
-  console.log(statoServer(servers[3]), statoServer(servers[4]), statoServer(servers[5]))
-  console.log(contaPerStato(servers, "ok"), contaPerStato(servers, "attenzione"))
-  console.log(contaPerStato(servers, "critico"), contaPerStato(servers, "offline"))
+  const ok = contaPerStato(servers, "ok")
+  const attenzione = contaPerStato(servers, "attenzione")
+  const critici = contaPerStato(servers, "critico")
+  const offline = contaPerStato(servers, "offline")
+  const serverOnline = ok + attenzione + critici
+  const mediaCpu = cpuMedia(servers)
+  const lento = piuLento(servers)
 
   return (
     <div className="pannello">
-      <h1>{sistema.nome}</h1>
+      <Intestazione
+        nome={sistema.nome}
+        aggiornato={sistema.aggiornato}
+        online={serverOnline}
+        totale={servers.length}
+      />
+      <Riepilogo
+        ok={ok}
+        attenzione={attenzione}
+        critici={critici}
+        offline={offline}
+        mediaCpu={mediaCpu}
+        lento={lento}
+      />
     </div>
   )
 }
