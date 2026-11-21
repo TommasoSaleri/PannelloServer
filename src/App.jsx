@@ -4,6 +4,7 @@ import { contaPerStato, cpuMedia, piuLento } from './calcoli.js'
 import Intestazione from './Intestazione.jsx'
 import Riepilogo from './Riepilogo.jsx'
 import SchedaServer from './SchedaServer.jsx'
+import GrigliaServer from './GrigliaServer.jsx'
 
 export default function App() {
   const ok = contaPerStato(servers, "ok")
@@ -30,7 +31,7 @@ export default function App() {
         mediaCpu={mediaCpu}
         lento={lento}
       />
-      <SchedaServer server={servers[2]} />
+      <GrigliaServer servers={servers} />
     </div>
   )
 }
